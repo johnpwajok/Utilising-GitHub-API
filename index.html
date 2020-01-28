@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="styles.css">
+  <title></title>
+</head>
+
+<body>
+  <div class="container">
+    <center>
+      <h1 id="header">Github User Information</h1>
+      <div class="searchSection">
+        <input type="text" id="searchBox" name="" value="" placeholder="Username">
+        <input type="submit" name="" value="Search" id="searchButton">
+      </div>
+    </center>
+
+      <div class="userInformation">
+        <div class="userProfile">
+          <h3 class="sectionHeading">User Profile</h3>
+          <table class="profileInfo">
+            <tr>
+              <td>
+                <center><img src="picturePlaceholder.jpeg" alt="" id="profilePicture"></center>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p class="profileVariables">Name:- </p>
+                <p id="name"></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p class="profileVariables">Username:- </p>
+                <p id="userName"></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p class="profileVariables">Email:- </p>
+                <p id="email"></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p class="profileVariables">Location:- </p>
+                <p id="location"></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p class="profileVariables">Number of Gists:- </p>
+                <p id="gists"></p>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="repoSection">
+          <h3 class="sectionHeading">
+            <center>User repos will appear below:</center>
+          </h3>
+          <center><div class="userRepos" id="repoSection">
+          </div></center>
+        </div>
+
+      </div>
+  </div>
+  <script src="index.js" charset="utf-8"></script>
+</body>
+
+</html>
