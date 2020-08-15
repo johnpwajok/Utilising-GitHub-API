@@ -94,7 +94,7 @@ async function getRepos() {
           "<br><br>" +
           '<a href= "' +
           repoLink +
-          '"> View project on Github</a>';
+          '" target="_blank"> View project on Github</a>';
       } else {
         //no description exists
         let repoLink = repoInfo[j].html_url;
@@ -106,7 +106,7 @@ async function getRepos() {
           "<p>No description</p>" +
           '<a href= "' +
           repoLink +
-          '"> View project on Github</a>';
+          '" target="_blank"> View project on Github</a>';
       }
       document.getElementById("repoSection").appendChild(newRepo);
     }
