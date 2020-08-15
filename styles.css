@@ -129,6 +129,11 @@ select:focus {
 #searchButton:hover {
   background-color: #24292e;
 }
+
+#searchError {
+  color: red;
+}
+
 #profilePicture {
   max-width: 45%;
   width: 45%;
