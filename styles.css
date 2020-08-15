@@ -4,6 +4,9 @@ html {
 body {
   max-width: 100%;
   background-color: #f6f8fa;
+  background-image: url(./images/hero_github4.jpg);
+  /*background-image: radial-gradient(rgb(230, 222, 222), rgb(246, 158, 123));*/
+  background-position: center;
 }
 
 table {
@@ -95,6 +98,7 @@ a:hover {
   /*overflow-y: scroll;*/
   border-radius: 15px;
   margin-bottom: 1rem;
+  background-color: #f6f8fa;
 }
 
 .repoHeadings {
@@ -107,6 +111,7 @@ a:hover {
 
 #header {
   margin: 3rem;
+  text-decoration: underline;
 }
 
 #searchBox {
@@ -123,11 +128,14 @@ select:focus {
   height: 2rem;
   border-radius: 10px;
   margin-left: 2rem;
-  background-color: #f69e7b;
+  background-color: #ff5722;
   color: white;
 }
 #searchButton:hover {
   background-color: #24292e;
+}
+
+#helpMessage {
 }
 
 #searchError {
@@ -137,6 +145,11 @@ select:focus {
 #profilePicture {
   max-width: 45%;
   width: 45%;
+}
+
+.profileInfo {
+  background-color: #f6f8fa;
+  border-radius: 20px 20px 20px 20px;
 }
 
 @media screen and (max-width: 1000px) {
