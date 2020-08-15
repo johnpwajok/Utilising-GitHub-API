@@ -1,102 +1,121 @@
-html{
+html {
   min-width: 360px;
 }
-body{
+body {
   max-width: 100%;
 }
 
-table{
+table {
   border: 1px solid black;
   width: 90%;
   padding: 0;
   margin: 0;
-  border-collapse: collapse;
+
+  border-collapse: separate;
+  border-radius: 6px;
+  -moz-border-radius: 6px;
 }
 
-td{
-  border: 0.1rem solid black;
-  margin: 0;
+td {
+  border-top: solid black 1px;
 }
 
-.container{
+#tableHead {
+  border-top: none;
+}
+
+.container {
   max-width: 100%;
   width: 100%;
 }
 
-.searchSection{
+.searchSection {
   max-width: 65%;
   height: 3rem;
 }
 
-.userInformation{
+.userInformation {
   max-width: 65%;
   width: 65%;
   margin: 0 0 20% 20%;
 }
 
-.userProfile{
+.userProfile {
   max-width: 30%;
   width: 30%;
   float: left;
 }
 
-.repoSection{
+.repoSection {
   width: 60%;
   max-width: 60%;
   float: right;
 }
 
-.userRepos{
+.userRepos {
   max-width: 100%;
   width: 100%;
   margin-top: 2rem;
   margin-right: 2rem;
+  border: none;
 
   max-height: 36rem;
-  overflow-y:scroll;
+  overflow-y: scroll;
   text-align: center;
 }
 
-.repos{
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: rgba(112, 109, 109, 0.5);
+  /*-webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);*/
+}
+
+.repos {
   max-width: 98%;
   width: 100%;
-  height: 7rem;
-  border: 0.1rem solid black;
+  /*height: 12rem;*/
+  border: 1px solid black;
   border-collapse: collapse;
-  overflow-y:scroll;
-
+  overflow-y: scroll;
+  border-radius: 15px;
+  margin-bottom: 1rem;
 }
-.repoHeadings{
+.repoHeadings {
   font-weight: bold;
 }
 
-.sectionHeading{
-
-}
-
-.profileVariables{
+.profileVariables {
   float: left;
 }
 
-
-#header{
+#header {
   margin: 3rem;
 }
 
-#searchBox{
+#searchBox {
   width: 50%;
   height: 2rem;
+  border-radius: 15px;
 }
- #searchButton{
-   width: 15%;
-   height: 2rem;
-   border-radius: 10px;
-   margin-left: 2rem;
- }
- #searchButton:hover{
-   background-color: #0099FF;
- }
-#profilePicture{
+#searchBox:focus,
+select:focus {
+  outline: none;
+}
+#searchButton {
+  width: 15%;
+  height: 2rem;
+  border-radius: 10px;
+  margin-left: 2rem;
+}
+#searchButton:hover {
+  background-color: #73afd6;
+}
+#profilePicture {
   max-width: 45%;
   width: 45%;
 }

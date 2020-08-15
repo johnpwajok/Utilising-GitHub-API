@@ -29,6 +29,15 @@ async function getRepos() {
   //information of the profile that the user searched for
   currentUser = currentUserInfo;
 
+  //clear all previous repo info
+  let myNode = document.getElementById("repoSection");
+  let fc = myNode.firstChild;
+
+  while (fc) {
+    myNode.removeChild(fc);
+    fc = myNode.firstChild;
+  }
+
   //getting repo Information
   let repoURL = searchedUserURL.concat("/repos");
   let repoResponse = await fetch(repoURL);
@@ -42,11 +51,17 @@ async function getRepos() {
 
     //add repo info to div
     if (repoInfo[j].description != null) {
+      //link to repo
+      let repoLink = repoInfo[j].url;
       newRepo.innerHTML =
         "<p class='repoHeadings'>Repo Name: </p>" +
         repoInfo[j].name +
         "<p class='repoHeadings'>Description</p>" +
-        repoInfo[j].description;
+        repoInfo[j].description +
+        "<br><br>" +
+        '<a href= "' +
+        repoLink +
+        '"> View project on Github</a>';
     } else {
       //no description exists
       newRepo.innerHTML =
