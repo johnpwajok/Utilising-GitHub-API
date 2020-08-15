@@ -123,9 +123,11 @@ select:focus {
   height: 2rem;
   border-radius: 10px;
   margin-left: 2rem;
+  background-color: #f69e7b;
+  color: white;
 }
 #searchButton:hover {
-  background-color: #f69e7b;
+  background-color: #24292e;
 }
 #profilePicture {
   max-width: 45%;
