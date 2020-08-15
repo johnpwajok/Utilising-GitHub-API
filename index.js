@@ -52,11 +52,12 @@ async function getRepos() {
     //add repo info to div
     if (repoInfo[j].description != null) {
       //link to repo
-      let repoLink = repoInfo[j].url;
+      let repoLink = repoInfo[j].html_url;
       newRepo.innerHTML =
-        "<p class='repoHeadings'>Repo Name: </p>" +
+        "<h4>" +
         repoInfo[j].name +
-        "<p class='repoHeadings'>Description</p>" +
+        "</h4>" +
+        "<p class='repoHeadings'>Project Description</p>" +
         repoInfo[j].description +
         "<br><br>" +
         '<a href= "' +
@@ -64,11 +65,16 @@ async function getRepos() {
         '"> View project on Github</a>';
     } else {
       //no description exists
+      let repoLink = repoInfo[j].html_url;
       newRepo.innerHTML =
-        "<p class='repoHeadings'>Repo Name: </p>" +
+        "<h4>" +
         repoInfo[j].name +
-        "<p class='repoHeadings'>Description</p>" +
-        "<p>No description</p>";
+        "</h4>" +
+        "<p class='repoHeadings'>Project Description</p>" +
+        "<p>No description</p>" +
+        '<a href= "' +
+        repoLink +
+        '"> View project on Github</a>';
     }
     document.getElementById("repoSection").appendChild(newRepo);
   }

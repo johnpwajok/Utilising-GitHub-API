@@ -3,6 +3,7 @@ html {
 }
 body {
   max-width: 100%;
+  background-color: #f6f8fa;
 }
 
 table {
@@ -18,6 +19,17 @@ table {
 
 td {
   border-top: solid black 1px;
+}
+
+a {
+  background-color: #f69e7b;
+  color: white;
+  padding: 0.4em 0.4em;
+  text-decoration: none;
+}
+
+a:hover {
+  background-color: #24292e;
 }
 
 #tableHead {
@@ -76,15 +88,15 @@ td {
 }
 
 .repos {
-  max-width: 98%;
+  max-width: 95%;
   width: 100%;
-  /*height: 12rem;*/
   border: 1px solid black;
   border-collapse: collapse;
-  overflow-y: scroll;
+  /*overflow-y: scroll;*/
   border-radius: 15px;
   margin-bottom: 1rem;
 }
+
 .repoHeadings {
   font-weight: bold;
 }
@@ -113,9 +125,47 @@ select:focus {
   margin-left: 2rem;
 }
 #searchButton:hover {
-  background-color: #73afd6;
+  background-color: #f69e7b;
 }
 #profilePicture {
   max-width: 45%;
   width: 45%;
+}
+
+@media screen and (max-width: 1000px) {
+  .container {
+    max-width: 100%;
+    width: 100%;
+    text-align: center;
+  }
+
+  .userProfile {
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    border: 0;
+    /*margin-left: 2rem;*/
+  }
+
+  .repoSection {
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    border: 0;
+  }
+
+  .searchSection {
+    width: 100%;
+    max-width: 100%;
+  }
+  #searchBox {
+    width: 65%;
+    float: left;
+  }
+  #searchButton {
+    text-align: center;
+    width: 30%;
+    float: right;
+    margin-left: 0.5rem;
+  }
 }
