@@ -5,7 +5,7 @@ searchButton.addEventListener("click", getRepos);
 async function getRepos() {
   let userName = document.getElementById("searchBox").value;
   console.log(userName);
-  let searchedUser = '';
+  let searchedUser = "";
 
   const apiURL = "https://api.github.com/users";
   const response = await fetch(apiURL);
@@ -13,21 +13,21 @@ async function getRepos() {
   //all user information
   const fullList = info;
 
-//get the url of the profile the user searched for
+  //get the url of the profile the user searched for
   for (let i = 0; i < fullList.length; i++) {
     let result = fullList[i];
     if (result.login == userName) {
       //profile url = the api url + / + username
-      searchedUserURL = apiURL.concat("/" + userName);
+      //searchedUserURL = apiURL.concat("/" + userName);
     }
     console.log(result);
   }
 
+  let searchedUserURL = apiURL.concat("/" + userName);
   let searchedUserResponse = await fetch(searchedUserURL);
   let currentUserInfo = await searchedUserResponse.json();
   //information of the profile that the user searched for
   currentUser = currentUserInfo;
-
 
   //getting repo Information
   let repoURL = searchedUserURL.concat("/repos");
@@ -36,25 +36,37 @@ async function getRepos() {
   repoInfo = repoJson;
   //create a new div that will store the name and desctiption of each repo
   for (let j = 0; j < repoInfo.length; j++) {
-    let newRepo = document.createElement('div');
-    newRepo.className += 'repos';
+    let newRepo = document.createElement("div");
+    newRepo.className += "repos";
     newRepo.id = j;
 
-    newRepo.innerHTML = "<p class='repoHeadings'>Repo Name: </p>" + repoInfo[j].name + "<p class='repoHeadings'>Description</p>" + repoInfo[j].description;
+    //add repo info to div
+    if (repoInfo[j].description != null) {
+      newRepo.innerHTML =
+        "<p class='repoHeadings'>Repo Name: </p>" +
+        repoInfo[j].name +
+        "<p class='repoHeadings'>Description</p>" +
+        repoInfo[j].description;
+    } else {
+      //no description exists
+      newRepo.innerHTML =
+        "<p class='repoHeadings'>Repo Name: </p>" +
+        repoInfo[j].name +
+        "<p class='repoHeadings'>Description</p>" +
+        "<p>No description</p>";
+    }
     document.getElementById("repoSection").appendChild(newRepo);
-
   }
 
   console.log(info);
   console.log(searchedUser);
 
-  document.getElementById('profilePicture').src = currentUser.avatar_url;
-  document.getElementById('name').innerHTML = currentUser.name;
-  document.getElementById('userName').innerHTML = currentUser.login;
-  document.getElementById('email').innerHTML = currentUser.email;
-  document.getElementById('location').innerHTML = currentUser.location;
-  document.getElementById('gists').innerHTML = currentUser.public_gists;
+  document.getElementById("profilePicture").src = currentUser.avatar_url;
+  document.getElementById("name").innerHTML = currentUser.name;
+  document.getElementById("userName").innerHTML = currentUser.login;
+  document.getElementById("email").innerHTML = currentUser.email;
+  document.getElementById("location").innerHTML = currentUser.location;
+  document.getElementById("gists").innerHTML = currentUser.public_gists;
 
-
-  document.getElementById("searchBox").value = '';
+  document.getElementById("searchBox").value = "";
 }
