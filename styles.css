@@ -90,7 +90,6 @@ a:hover {
 ::-webkit-scrollbar-thumb {
   border-radius: 5px;
   background-color: rgba(112, 109, 109, 0.5);
-  /*-webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);*/
 }
 
 .repos {
@@ -98,7 +97,6 @@ a:hover {
   width: 100%;
   border: 1px solid black;
   border-collapse: collapse;
-  /*overflow-y: scroll;*/
   border-radius: 15px;
   margin-bottom: 1rem;
   background-color: #f6f8fa;
@@ -137,9 +135,6 @@ select:focus {
 #searchButton:hover {
   background-color: #24292e;
 }
-
-/* #helpMessage {
-} */
 
 #searchError {
   color: red;
