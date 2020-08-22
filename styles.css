@@ -6,7 +6,10 @@ body {
   background-color: #f6f8fa;
   background-image: url(./images/hero_github4.jpg);
   /*background-image: radial-gradient(rgb(230, 222, 222), rgb(246, 158, 123));*/
+  background-repeat: no-repeat;
+
   background-position: center;
+  background-attachment: fixed;
 }
 
 table {
@@ -29,6 +32,7 @@ a {
   color: white;
   padding: 0.4em 0.4em;
   text-decoration: none;
+  border-radius: 15px, 15px, 15px, 15px;
 }
 
 a:hover {
