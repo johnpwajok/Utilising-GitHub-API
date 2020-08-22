@@ -1,15 +1,15 @@
 html {
   min-width: 360px;
 }
-body {
+/* body {
   max-width: 100%;
   background-color: #f6f8fa;
-  /* To Test Deploy 1*/
+   To Test Deploy 1
   background-image: url(./images/hero_github4.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-}
+} */
 
 table {
   border: 1px solid black;
