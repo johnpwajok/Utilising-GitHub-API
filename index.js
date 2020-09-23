@@ -85,12 +85,28 @@ async function getRepos() {
       if (repoInfo[j].description != null) {
         //link to repo
         let repoLink = repoInfo[j].html_url;
+        var mainLang;
+        var description;
+        if (repoInfo[j].language != "null") {
+          mainLang = repoInfo[j].language;
+        } else {
+          mainLang = "Not available";
+        }
+        if (repoInfo[j].description != "null") {
+          description = repoInfo[j].description;
+        } else {
+          description = "Not available";
+        }
+
         newRepo.innerHTML =
           "<h4>" +
           repoInfo[j].name +
           "</h4>" +
+          "<h5> Primary Language: " +
+          mainLang +
+          "</h5>" +
           "<p class='repoHeadings'>Project Description</p>" +
-          repoInfo[j].description +
+          description +
           "<br><br>" +
           '<a href= "' +
           repoLink +
@@ -117,8 +133,17 @@ async function getRepos() {
     document.getElementById("profilePicture").src = currentUser.avatar_url;
     document.getElementById("name").innerHTML = currentUser.name;
     document.getElementById("userName").innerHTML = currentUser.login;
-    document.getElementById("email").innerHTML = currentUser.email;
-    document.getElementById("location").innerHTML = currentUser.location;
+    document.getElementById("bio").innerHTML = currentUser.bio;
+    if (currentUser.email != null) {
+      document.getElementById("email").innerHTML = currentUser.email;
+    } else {
+      document.getElementById("email").innerHTML = "Not available";
+    }
+    if (currentUser.location != null) {
+      document.getElementById("location").innerHTML = currentUser.location;
+    } else {
+      document.getElementById("location").innerHTML = "Not available";
+    }
     document.getElementById("gists").innerHTML = currentUser.public_gists;
 
     document.getElementById("searchBox").value = "";
