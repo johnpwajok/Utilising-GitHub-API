@@ -87,7 +87,7 @@ async function getRepos() {
         let repoLink = repoInfo[j].html_url;
         var mainLang;
         var description;
-        if (repoInfo[j].language != "null") {
+        if (repoInfo[j].language != null) {
           mainLang = repoInfo[j].language;
         } else {
           mainLang = "Not available";
